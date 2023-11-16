@@ -21,9 +21,10 @@ func _ready():
 func update_goals_completion():
 	var goals_completed_count = 0
 	for key in daily_goals:
-		if daily_goals[key]:
+		if daily_goals[key] == true:
 			goals_completed_count += 1
-	goals_completion = float(daily_goals.size()) / goals_completed_count
+	print("goals completed / total goals: ", goals_completed_count, "/", daily_goals.size())
+	goals_completion = goals_completed_count / float(daily_goals.size())
 
 func reset_goals():
 	for key in daily_goals:
