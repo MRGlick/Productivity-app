@@ -4,16 +4,18 @@
 [ext_resource type="Script" path="res://CreatePanel.gd" id="1_xu88v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_224gn"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
+bg_color = Color(0.666667, 0.666667, 0.666667, 1)
 border_width_left = 15
 border_width_top = 15
 border_width_right = 15
 border_width_bottom = 15
-border_color = Color(0.713726, 0.196078, 0.196078, 1)
+border_color = Color(0.835294, 0.196078, 0.196078, 1)
 corner_radius_top_left = 35
 corner_radius_top_right = 35
 corner_radius_bottom_right = 35
 corner_radius_bottom_left = 35
+shadow_color = Color(0.788235, 0.12549, 0.12549, 0.278431)
+shadow_size = 39
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qk5nc"]
 bg_color = Color(0.196078, 0.196078, 0.196078, 1)
