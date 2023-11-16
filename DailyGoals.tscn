@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://dn1lfn8mvyuqv"]
+
+[ext_resource type="Script" path="res://DailyGoals.gd" id="1_h5xn3"]
+[ext_resource type="Texture2D" uid="uid://btronouxiv6i3" path="res://Back.png" id="2_gq1ev"]
+
+[node name="DailyGoals" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h5xn3")
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 28.0
+offset_right = 159.0
+offset_bottom = 141.0
+icon = ExtResource("2_gq1ev")
+flat = true
+alignment = 2
+icon_alignment = 1
+expand_icon = true
+
+[node name="ButtonHolder" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://cds2gxqfd6f8b"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_ixbv3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vdlei"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.196078, 0.196078, 0.196078, 1)
+corner_radius_top_left = 35
+corner_radius_top_right = 35
+corner_radius_bottom_right = 35
+corner_radius_bottom_left = 35
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ixbv3")
+
+[node name="SetDailyGoals" type="Button" parent="."]
+layout_mode = 0
+offset_left = 187.0
+offset_top = 1090.0
+offset_right = 705.0
+offset_bottom = 1242.0
+theme_override_colors/font_color = Color(0.196078, 0.196078, 0.196078, 1)
+theme_override_colors/font_pressed_color = Color(0.196078, 0.196078, 0.196078, 1)
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_vdlei")
+text = "Set daily goals
+"
+
+[node name="DailyGoals" type="Button" parent="."]
+layout_mode = 0
+offset_left = 187.0
+offset_top = 336.0
+offset_right = 705.0
+offset_bottom = 488.0
+theme_override_colors/font_color = Color(0.196078, 0.196078, 0.196078, 1)
+theme_override_colors/font_pressed_color = Color(0.196078, 0.196078, 0.196078, 1)
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_vdlei")
+text = "Daily goals
+"
+
+[connection signal="pressed" from="SetDailyGoals" to="." method="_on_set_daily_goals_pressed"]
+[connection signal="pressed" from="DailyGoals" to="." method="_on_daily_goals_pressed"]
