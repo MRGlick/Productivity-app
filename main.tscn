@@ -42,13 +42,14 @@ theme_override_styles/background = SubResource("StyleBoxFlat_lb8s0")
 theme_override_styles/fill = SubResource("StyleBoxFlat_unqc8")
 step = 1.0
 fill_mode = 3
+show_percentage = false
 
 [node name="SetDailyGoals" type="Button" parent="."]
 layout_mode = 0
 offset_left = 187.0
-offset_top = 1090.0
+offset_top = 874.0
 offset_right = 705.0
-offset_bottom = 1242.0
+offset_bottom = 1026.0
 theme_override_colors/font_color = Color(0.196078, 0.196078, 0.196078, 1)
 theme_override_colors/font_pressed_color = Color(0.196078, 0.196078, 0.196078, 1)
 theme_override_font_sizes/font_size = 48
@@ -59,15 +60,32 @@ text = "Set daily goals
 [node name="DailyGoals" type="Button" parent="."]
 layout_mode = 0
 offset_left = 187.0
-offset_top = 336.0
+offset_top = 621.0
 offset_right = 705.0
-offset_bottom = 488.0
+offset_bottom = 773.0
 theme_override_colors/font_color = Color(0.196078, 0.196078, 0.196078, 1)
 theme_override_colors/font_pressed_color = Color(0.196078, 0.196078, 0.196078, 1)
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_vdlei")
 text = "Daily goals
 "
+
+[node name="Streaks" type="Button" parent="."]
+layout_mode = 0
+offset_left = 187.0
+offset_top = 370.0
+offset_right = 705.0
+offset_bottom = 522.0
+theme_override_colors/font_color = Color(0.196078, 0.196078, 0.196078, 1)
+theme_override_colors/font_pressed_color = Color(0.196078, 0.196078, 0.196078, 1)
+theme_override_colors/font_hover_color = Color(0.196078, 0.196078, 0.196078, 1)
+theme_override_colors/font_focus_color = Color(0.196078, 0.196078, 0.196078, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.196078, 0.196078, 0.196078, 1)
+theme_override_colors/font_disabled_color = Color(0.196078, 0.196078, 0.196078, 1)
+theme_override_colors/font_outline_color = Color(0.196078, 0.196078, 0.196078, 1)
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_vdlei")
+text = "Streaks"
 
 [connection signal="pressed" from="SetDailyGoals" to="." method="_on_set_daily_goals_pressed"]
 [connection signal="pressed" from="DailyGoals" to="." method="_on_daily_goals_pressed"]
