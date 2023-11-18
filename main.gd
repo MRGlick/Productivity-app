@@ -3,7 +3,7 @@ extends Control
 #
 # Main screen -> Daily goals button -> daily goals panel -> back button -> Main screen
 # Main screen -> Set daily goals button -> create panel -> back button -> Main screen
-#                                       
+# Main screen -> Streaks button -> Streaks screen -> back button -> Main screen
 
 var progress_bar_real_val = 0.0
 
