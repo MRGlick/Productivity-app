@@ -11,9 +11,13 @@ var save_data: Dictionary = {}
 
 var goals_completion: float = 0
 
+var days := []
+
 func _ready():
 	_load()
 	if date_last_opened and date_last_opened.day != get_datetime().day:
+		update_goals_completion()
+		days.append(Day.new(date_last_opened, goals_completion))
 		reset_goals()
 	date_last_opened = get_datetime()
 	update_goals_completion()
@@ -39,6 +43,7 @@ func _save():
 	var file = FileAccess.open(save_path, FileAccess.WRITE)
 	save_data.daily_goals = daily_goals
 	save_data.date_last_opened = date_last_opened
+	save_data.days = days
 	file.store_var(save_data)
 	file.close()
 
@@ -48,4 +53,5 @@ func _load():
 		save_data = file.get_var()
 		date_last_opened = save_data.date_last_opened
 		daily_goals = save_data.daily_goals
+		days = [Day.new(get_datetime(), 0.5), Day.new(get_datetime(), 0.2), Day.new(get_datetime(), 0.5), Day.new(get_datetime(), 0.2), Day.new(get_datetime(), 0.5), Day.new(get_datetime(), 0.2), Day.new(get_datetime(), 0.5), Day.new(get_datetime(), 0.2)]
 		file.close()
