@@ -32,3 +32,7 @@ func _on_set_daily_goals_pressed():
 
 func _on_daily_goals_pressed():
 	Global.change_scene("res://DailyGoals.tscn")
+
+
+func _on_streaks_pressed():
+	Global.change_scene("res://Streaks.tscn")

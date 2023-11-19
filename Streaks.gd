@@ -66,3 +66,7 @@ func get_month_name(month_number):
 			return "November"
 		12:
 			return "December"
+
+
+func _on_back_button_pressed():
+	Global.change_scene("res://main.tscn")

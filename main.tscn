@@ -85,7 +85,8 @@ theme_override_colors/font_disabled_color = Color(0.196078, 0.196078, 0.196078, 
 theme_override_colors/font_outline_color = Color(0.196078, 0.196078, 0.196078, 1)
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_vdlei")
-text = "Streaks"
+text = "Month history"
 
 [connection signal="pressed" from="SetDailyGoals" to="." method="_on_set_daily_goals_pressed"]
 [connection signal="pressed" from="DailyGoals" to="." method="_on_daily_goals_pressed"]
+[connection signal="pressed" from="Streaks" to="." method="_on_streaks_pressed"]

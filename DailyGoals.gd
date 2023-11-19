@@ -7,7 +7,10 @@ var button_start_position = Vector2(138, 281)
 var button_spacing = 230
 
 func _ready():
-	update_button_positions()
+	if Global.daily_goals != {}:
+		update_button_positions()
+		$NoTasksYet.hide()
+	
 
 func _on_back_button_pressed():
 	Global.change_scene("res://main.tscn")

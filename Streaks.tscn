@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://yksgtibu15tj"]
+[gd_scene load_steps=3 format=3 uid="uid://b0d2r4kr3r1fq"]
 
 [ext_resource type="Script" path="res://Streaks.gd" id="1_rnium"]
+[ext_resource type="Texture2D" uid="uid://btronouxiv6i3" path="res://Back.png" id="2_0k33y"]
 
 [node name="Streaks" type="Control"]
 layout_mode = 3
@@ -111,3 +112,16 @@ theme_override_font_sizes/font_size = 24
 text = "Sun"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="BackButton" type="Button" parent="."]
+offset_left = 34.0
+offset_top = 28.0
+offset_right = 159.0
+offset_bottom = 141.0
+icon = ExtResource("2_0k33y")
+flat = true
+alignment = 2
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

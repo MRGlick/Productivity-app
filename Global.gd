@@ -1,7 +1,7 @@
 extends Node
 
 
-var daily_goals: Dictionary = {'make an app' : false, 'do something' : true} # ex: 'make an app' : false, 'do something' : true | value is whether the task has been done or not
+var daily_goals: Dictionary = {} # ex: 'make an app' : false, 'do something' : true | value is whether the task has been done or not
 
 var save_path: String = "user://data.dat"
 
@@ -13,7 +13,10 @@ var goals_completion: float = 0
 
 var days := []
 
+var scene_changing = false
+
 func _ready():
+	_save()
 	_load()
 	if date_last_opened and date_last_opened.day != get_datetime().day:
 		update_goals_completion()
@@ -34,7 +37,13 @@ func reset_goals():
 		daily_goals[key] = false
 
 func change_scene(path):
+	if scene_changing: return
+	scene_changing = true
+	Transition.close()
+	await Transition.finished_closing
 	get_tree().change_scene_to_file(path)
+	Transition.open()
+	scene_changing = false
 
 func get_datetime():
 	return Time.get_datetime_dict_from_system()
@@ -53,5 +62,6 @@ func _load():
 		save_data = file.get_var()
 		date_last_opened = save_data.date_last_opened
 		daily_goals = save_data.daily_goals
-		days = [Day.new(get_datetime(), 0.5), Day.new(get_datetime(), 0.2), Day.new(get_datetime(), 0.5), Day.new(get_datetime(), 0.2), Day.new(get_datetime(), 0.5), Day.new(get_datetime(), 0.2), Day.new(get_datetime(), 0.5), Day.new(get_datetime(), 0.2)]
+		#[Day.new(get_datetime(), 0.5), Day.new(get_datetime(), 0.2), Day.new(get_datetime(), 0.5), Day.new(get_datetime(), 0.2), Day.new(get_datetime(), 0.5), Day.new(get_datetime(), 0.2), Day.new(get_datetime(), 0.5), Day.new(get_datetime(), 0.2)]
+		days = save_data.days
 		file.close()
