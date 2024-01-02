@@ -16,11 +16,14 @@ var days := []
 var scene_changing = false
 
 func _ready():
-	_save()
 	_load()
 	if date_last_opened and date_last_opened.day != get_datetime().day:
 		update_goals_completion()
-		days.append(Day.new(date_last_opened, goals_completion))
+		days.append({
+			"month" : date_last_opened.month, 
+			"day" : date_last_opened.day, 
+			"completion" : goals_completion
+			})
 		reset_goals()
 	date_last_opened = get_datetime()
 	update_goals_completion()
@@ -52,16 +55,19 @@ func _save():
 	var file = FileAccess.open(save_path, FileAccess.WRITE)
 	save_data.daily_goals = daily_goals
 	save_data.date_last_opened = date_last_opened
+	for d in days:
+		if d is EncodedObjectAsID:
+			days.erase(d)
 	save_data.days = days
-	file.store_var(save_data)
+	file.store_var(save_data, true)
 	file.close()
 
 func _load():
 	var file = FileAccess.open(save_path, FileAccess.READ)
 	if FileAccess.file_exists(save_path):
-		save_data = file.get_var()
+		var data = file.get_var(true);
+		save_data = data;
 		date_last_opened = save_data.date_last_opened
 		daily_goals = save_data.daily_goals
-		#[Day.new(get_datetime(), 0.5), Day.new(get_datetime(), 0.2), Day.new(get_datetime(), 0.5), Day.new(get_datetime(), 0.2), Day.new(get_datetime(), 0.5), Day.new(get_datetime(), 0.2), Day.new(get_datetime(), 0.5), Day.new(get_datetime(), 0.2)]
 		days = save_data.days
 		file.close()

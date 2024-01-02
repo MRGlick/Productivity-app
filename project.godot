@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Global="*res://Global.gd"
 Transition="*res://Transition.tscn"
+DebugView="*res://DebugView.tscn"
 
 [display]
 

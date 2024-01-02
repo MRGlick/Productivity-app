@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://btjxdbhiuiipp"]
+
+[ext_resource type="Script" path="res://DebugView.gd" id="1_ky5sh"]
+
+[sub_resource type="Gradient" id="Gradient_m00sx"]
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_crmyd"]
+gradient = SubResource("Gradient_m00sx")
+fill_from = Vector2(1, 1)
+
+[node name="DebugView" type="Control"]
+z_index = 4
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ky5sh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(450, 67)
+scale = Vector2(14.0625, 7.26954)
+texture = SubResource("GradientTexture2D_crmyd")
+
+[node name="Days" type="Label" parent="."]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 31.0
+offset_right = 917.0
+offset_bottom = 175.0
+theme_override_font_sizes/font_size = 32
+text = "Stored days: "
+autowrap_mode = 2

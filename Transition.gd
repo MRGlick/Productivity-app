@@ -17,11 +17,9 @@ func close():
 	closing = false
 	$ColorRect.position.x = 0.0
 	emit_signal("finished_closing")
-	print("finished_closing")
 
 
 func open():
-	print("started_opening")
 	opening = true
 	closing = false
 	for i in 30:

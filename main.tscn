@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cds2gxqfd6f8b"]
+[gd_scene load_steps=6 format=3 uid="uid://cds2gxqfd6f8b"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_ixbv3"]
+[ext_resource type="Texture2D" uid="uid://chab6e8ykjsco" path="res://options.png" id="2_o5n53"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lb8s0"]
 bg_color = Color(1, 1, 1, 0)
@@ -87,6 +88,18 @@ theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_vdlei")
 text = "Month history"
 
+[node name="DebugToggle" type="Button" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 27.0
+offset_right = 101.0
+offset_bottom = 104.0
+icon = ExtResource("2_o5n53")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
 [connection signal="pressed" from="SetDailyGoals" to="." method="_on_set_daily_goals_pressed"]
 [connection signal="pressed" from="DailyGoals" to="." method="_on_daily_goals_pressed"]
 [connection signal="pressed" from="Streaks" to="." method="_on_streaks_pressed"]
+[connection signal="pressed" from="DebugToggle" to="." method="_on_debug_toggle_pressed"]

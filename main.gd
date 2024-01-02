@@ -36,3 +36,10 @@ func _on_daily_goals_pressed():
 
 func _on_streaks_pressed():
 	Global.change_scene("res://Streaks.tscn")
+
+
+func _on_debug_toggle_pressed():
+	toggle_debug()
+
+func toggle_debug():
+	DebugView.toggle()
